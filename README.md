@@ -35,6 +35,6 @@ For any questions, feedback, or technical support, please contact me via an Issu
 
 ## License
 
-This project is licensed under the [MIT License](link_to_license).
+This project is licensed under the [MIT License](https://github.com/Orgfet/DVC/blob/HTML/CSS/JSWebVersion/LICENSE).
 
 
