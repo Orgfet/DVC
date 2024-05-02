@@ -3,29 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camera App with Selector</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: rgb(54, 54, 54);
-            color: white;
-            text-align: center;
-            margin-top: 50px;
-        }
-        video {
-            width: 100%;
-            max-width: 600px;
-            margin: 20px 0;
-        }
-        button {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-    </style>
+    <script src="camjs.js"></script>
+    <link rel="stylesheet" href="style.css"> 
+    <title>Cam site</title>
 </head>
 <body>
 
@@ -35,54 +15,5 @@
 <video id="videoElement" autoplay></video>
 <button onclick="startCamera()">Start</button>
 <button onclick="stopCamera()">Stop</button>
-
-<script>
-    let videoStream;
-
-    function startCamera() {
-        const selectedCamera = document.getElementById('cameraSelector').value;
-
-        const constraints = {
-            video: { deviceId: selectedCamera ? { exact: selectedCamera } : undefined }
-        };
-
-        navigator.mediaDevices.getUserMedia(constraints)
-            .then(function (stream) {
-                videoStream = stream;
-                var videoElement = document.getElementById('videoElement');
-                videoElement.srcObject = stream;
-            })
-            .catch(function (error) {
-                console.log("Error accessing video device: ", error);
-            });
-    }
-
-    function stopCamera() {
-        if (videoStream) {
-            var tracks = videoStream.getTracks();
-            tracks.forEach(track => track.stop());
-            var videoElement = document.getElementById('videoElement');
-            videoElement.srcObject = null;
-        }
-    }
-
-    
-    navigator.mediaDevices.enumerateDevices()
-        .then(function (devices) {
-            const cameraSelector = document.getElementById('cameraSelector');
-            devices.forEach(function (device) {
-                if (device.kind === 'videoinput') {
-                    const option = document.createElement('option');
-                    option.value = device.deviceId;
-                    option.text = device.label || `Camera ${cameraSelector.length + 1}`;
-                    cameraSelector.add(option);
-                }
-            });
-        })
-        .catch(function (error) {
-            console.log("Error enumerating devices: ", error);
-        });
-</script>
-
 </body>
 </html>
