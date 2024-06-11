@@ -1,4 +1,4 @@
-# Project DVC (Dor Video Cam)
+# Project DVC (Door Video Cam)
 
 
 ## Overview
@@ -23,7 +23,7 @@ To set up Dor Video Cam, follow these steps:
 
 ## Usage
 
-Once installed, you can use Dor Video Cam for various purposes:
+Once installed, you can use Door Video Cam for various purposes:
 
 
 - The software was designed to help people to see who is in front of your door
