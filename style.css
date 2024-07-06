@@ -5,11 +5,15 @@ body {
     text-align: center;
     margin-top: 50px;
 }
+
+/* Video Style */
 video {
     width: 100%;
     max-width: 600px;
     margin: 20px 0;
 }
+
+/* Button Style */
 button {
     background-color: #4caf50;
     color: #fff;
@@ -18,7 +22,62 @@ button {
     border-radius: 4px;
     cursor: pointer;
 }
+
+/* Link Style */
 a {
     color: white;
     text-decoration: none;
+}
+
+/* Media Queries for Mobile and Tablet */
+
+/* Smartphones in Portrait and Landscape */
+@media (max-width: 767px) {
+    body {
+        margin-top: 20px;
+    }
+
+    video {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+/* Tablets in Portrait */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+    body {
+        margin-top: 30px;
+    }
+
+    video {
+        max-width: 90%;
+        margin: 15px 0;
+    }
+
+    button {
+        padding: 9px 13px;
+        font-size: 15px;
+    }
+}
+
+/* Tablets in Landscape */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+    body {
+        margin-top: 40px;
+    }
+
+    video {
+        max-width: 80%;
+        margin: 18px 0;
+    }
+
+    button {
+        padding: 10px 14px;
+        font-size: 16px;
+    }
 }
